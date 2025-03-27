@@ -1,0 +1,218 @@
+/**
+ * Layout da documentação de componentes
+ */
+
+.documentation {
+  display: flex;
+  min-height: calc(100vh - #{$doc-header-height});
+  
+  &__sidebar {
+    width: $doc-sidebar-width;
+    background-color: $color-light;
+    border-right: 1px solid $color-border;
+    padding: $spacing-lg;
+    position: fixed;
+    top: $doc-header-height;
+    bottom: 0;
+    overflow-y: auto;
+    
+    @include respond-to(md) {
+      width: $doc-sidebar-width;
+    }
+    
+    @include respond-to(xs) {
+      position: static;
+      width: 100%;
+      border-right: 0;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+  
+  &__content {
+    flex: 1;
+    padding: $spacing-xl;
+    margin-left: $doc-sidebar-width;
+    
+    @include respond-to(xs) {
+      margin-left: 0;
+    }
+  }
+  
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  &__nav-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color-text-light;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
+  }
+  
+  &__nav-item {
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__nav-link {
+    display: block;
+    padding: $spacing-sm;
+    color: $color-text;
+    text-decoration: none;
+    border-radius: $border-radius;
+    transition: $transition-base;
+    
+    &:hover {
+      background-color: rgba($color-primary, 0.05);
+      color: $color-primary;
+    }
+    
+    &.active {
+      background-color: rgba($color-primary, 0.1);
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+  
+  &__header {
+    margin-bottom: $spacing-xl;
+  }
+  
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+  }
+  
+  &__subtitle {
+    font-size: 1.25rem;
+    color: $color-text-light;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__section {
+    margin-bottom: $spacing-xxl;
+    
+    &-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: $spacing-lg;
+      padding-bottom: $spacing-sm;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+  
+  &__component-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+    
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+  
+  &__component-tags {
+    display: flex;
+    gap: $spacing-sm;
+  }
+  
+  &__component-tag {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: $border-radius-pill;
+    background-color: $color-light;
+    color: $color-text-light;
+    border: 1px solid $color-border;
+  }
+  
+  &__tabs {
+    margin-bottom: $spacing-lg;
+    
+    &-nav {
+      display: flex;
+      border-bottom: 1px solid $color-border;
+      margin-bottom: $spacing-md;
+    }
+    
+    &-link {
+      padding: $spacing-sm $spacing-lg;
+      color: $color-text;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: $transition-base;
+      
+      &:hover {
+        color: $color-primary;
+      }
+      
+      &.active {
+        color: $color-primary;
+        border-bottom-color: $color-primary;
+      }
+    }
+    
+    &-content {
+      > div {
+        display: none;
+        
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  &__code {
+    background-color: $doc-code-bg;
+    border: 1px solid $doc-code-border;
+    border-radius: $border-radius;
+    padding: $spacing-md;
+    margin-bottom: $spacing-lg;
+    font-family: $font-family-monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    
+    pre {
+      margin: 0;
+    }
+  }
+  
+  &__props-table {
+    width: 100%;
+    margin-bottom: $spacing-lg;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: $spacing-sm $spacing-md;
+      border: 1px solid $color-border;
+      text-align: left;
+    }
+    
+    th {
+      background-color: $doc-code-bg;
+      font-weight: 600;
+    }
+    
+    td code {
+      background-color: $doc-code-bg;
+      padding: 0.2em 0.4em;
+      border-radius: $border-radius-sm;
+      font-family: $font-family-monospace;
+      font-size: 0.875em;
+    }
+  }
+} 

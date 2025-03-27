@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Documentação/Introdução" />
+
+# WP ThoughtLab Components
+
+## Visão Geral
+
+WP ThoughtLab Components é um plugin WordPress que fornece componentes reutilizáveis para facilitar a criação de layouts. 
+Este Storybook serve como documentação interativa desses componentes, permitindo que desenvolvedores explorem, testem e 
+entendam como implementar cada componente em seus projetos WordPress.
+
+## Como usar
+
+Para utilizar qualquer componente em seu tema ou plugin WordPress:
+
+```php
+// Exemplo de uso de um componente
+$button wp_component_button([
+  'text' => 'Botão Primário', 
+  'variant' => 'primary', 
+  'url' => 'https://www.google.com', 
+  'target' => '_blank'
+]);
+
+echo $button;
+```
+
+## Convenções
+
+- Todos os componentes seguem uma estrutura consistente
+- Os nomes das funções e classes usam o prefixo `wptl_`
+- Cada componente tem uma série de parâmetros configuráveis
+
+## Categorias de Componentes
+
+- **Básicos**: Elementos fundamentais como botões, cards e divisores
+- **Formulários**: Campos de entrada, selects, checkboxes, etc.
+- **Layout**: Grades, contêineres e outros elementos estruturais
+- **Navegação**: Menus, breadcrumbs, paginação
+- **Conteúdo**: Componentes para exibição de conteúdo dinâmico 

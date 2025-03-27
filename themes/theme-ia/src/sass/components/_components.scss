@@ -1,0 +1,473 @@
+/**
+ * Estilos base para componentes da biblioteca
+ */
+
+// Cartão (Card)
+.wp-component-card {
+  background-color: $color-background;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  transition: $transition-base;
+  border: 1px solid $color-border;
+  
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  &__header {
+    margin-bottom: $spacing-md;
+    border-bottom: 1px solid $color-border;
+    padding-bottom: $spacing-md;
+  }
+  
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__subtitle {
+    color: $color-text-light;
+    font-size: 0.875rem;
+  }
+  
+  &__body {
+    margin-bottom: $spacing-md;
+  }
+  
+  &__footer {
+    border-top: 1px solid $color-border;
+    padding-top: $spacing-md;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  // Variantes
+  &--primary {
+    border-top: 3px solid $color-primary;
+  }
+  
+  &--success {
+    border-top: 3px solid $color-success;
+  }
+  
+  &--warning {
+    border-top: 3px solid $color-warning;
+  }
+  
+  &--danger {
+    border-top: 3px solid $color-danger;
+  }
+}
+
+// Botão (Button)
+.wp-component-button {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: $border-radius;
+  transition: $transition-base;
+  cursor: pointer;
+  
+  &:hover, &:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.25);
+  }
+  
+  // Variantes
+  &--primary {
+    color: #fff;
+    background-color: $color-primary;
+    border-color: $color-primary;
+    
+    &:hover {
+      background-color: darken($color-primary, 7.5%);
+      border-color: darken($color-primary, 10%);
+    }
+  }
+  
+  &--secondary {
+    color: #fff;
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+    
+    &:hover {
+      background-color: darken($color-secondary, 7.5%);
+      border-color: darken($color-secondary, 10%);
+    }
+  }
+  
+  &--success {
+    color: #fff;
+    background-color: $color-success;
+    border-color: $color-success;
+    
+    &:hover {
+      background-color: darken($color-success, 7.5%);
+      border-color: darken($color-success, 10%);
+    }
+  }
+  
+  &--danger {
+    color: #fff;
+    background-color: $color-danger;
+    border-color: $color-danger;
+    
+    &:hover {
+      background-color: darken($color-danger, 7.5%);
+      border-color: darken($color-danger, 10%);
+    }
+  }
+  
+  &--outline-primary {
+    color: $color-primary;
+    background-color: transparent;
+    border-color: $color-primary;
+    
+    &:hover {
+      color: #fff;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+  
+  // Tamanhos
+  &--sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: $border-radius-sm;
+  }
+  
+  &--lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    border-radius: $border-radius-lg;
+  }
+}
+
+// Alerta (Alert)
+.wp-component-alert {
+  position: relative;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-md;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  
+  &__title {
+    font-weight: 600;
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__close {
+    position: absolute;
+    top: $spacing-md;
+    right: $spacing-md;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    color: inherit;
+    opacity: 0.5;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  
+  // Variantes
+  &--primary {
+    color: darken($color-primary, 30%);
+    background-color: lighten($color-primary, 35%);
+    border-color: lighten($color-primary, 30%);
+  }
+  
+  &--success {
+    color: darken($color-success, 30%);
+    background-color: lighten($color-success, 45%);
+    border-color: lighten($color-success, 40%);
+  }
+  
+  &--warning {
+    color: darken($color-warning, 30%);
+    background-color: lighten($color-warning, 40%);
+    border-color: lighten($color-warning, 35%);
+  }
+  
+  &--danger {
+    color: darken($color-danger, 30%);
+    background-color: lighten($color-danger, 40%);
+    border-color: lighten($color-danger, 35%);
+  }
+}
+
+// Badge
+.wp-component-badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 75%;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $border-radius-pill;
+  
+  // Variantes
+  &--primary {
+    color: #fff;
+    background-color: $color-primary;
+  }
+  
+  &--secondary {
+    color: #fff;
+    background-color: $color-secondary;
+  }
+  
+  &--success {
+    color: #fff;
+    background-color: $color-success;
+  }
+  
+  &--danger {
+    color: #fff;
+    background-color: $color-danger;
+  }
+  
+  &--warning {
+    color: #212529;
+    background-color: $color-warning;
+  }
+}
+
+// Tabs
+.wp-component-tabs {
+  margin-bottom: $spacing-lg;
+  
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    border-bottom: 1px solid $color-border;
+  }
+  
+  &__item {
+    margin-bottom: -1px;
+  }
+  
+  &__link {
+    display: block;
+    padding: $spacing-md $spacing-lg;
+    border: 1px solid transparent;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    text-decoration: none;
+    transition: $transition-base;
+    
+    &:hover {
+      border-color: $color-border $color-border $color-border;
+    }
+    
+    &.active {
+      color: $color-primary;
+      background-color: $color-background;
+      border-color: $color-border $color-border $color-background;
+    }
+  }
+  
+  &__content {
+    padding: $spacing-lg;
+    border: 1px solid $color-border;
+    border-top: 0;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+  
+  &__pane {
+    display: none;
+    
+    &.active {
+      display: block;
+    }
+  }
+}
+
+// Accordion
+.wp-component-accordion {
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  margin-bottom: $spacing-lg;
+  
+  &__item {
+    border-bottom: 1px solid $color-border;
+    
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  
+  &__header {
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: $spacing-md $spacing-lg;
+    font-size: 1rem;
+    color: $color-text;
+    text-align: left;
+    background-color: $color-background;
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: $transition-base;
+    cursor: pointer;
+    
+    &:not(.collapsed) {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.05);
+      
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+    
+    &::after {
+      content: '';
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-left: auto;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: 1.25rem;
+      transition: transform .2s ease-in-out;
+    }
+  }
+  
+  &__collapse {
+    height: 0;
+    overflow: hidden;
+    transition: height .35s ease;
+    
+    &.show {
+      height: auto;
+    }
+  }
+  
+  &__body {
+    padding: $spacing-lg;
+  }
+}
+
+// Tooltip
+.wp-component-tooltip {
+  position: relative;
+  display: inline-block;
+  
+  &__content {
+    visibility: hidden;
+    width: 200px;
+    background-color: $color-dark;
+    color: #fff;
+    text-align: center;
+    border-radius: $border-radius;
+    padding: $spacing-sm $spacing-md;
+    position: absolute;
+    z-index: $z-index-tooltip;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: $color-dark transparent transparent transparent;
+    }
+  }
+  
+  &:hover &__content {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// Documentação de componentes
+.wp-component-doc {
+  margin-bottom: $spacing-xl;
+  
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $color-border;
+  }
+  
+  &__description {
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__example {
+    padding: $spacing-lg;
+    margin-bottom: $spacing-md;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+  }
+  
+  &__code {
+    background-color: $doc-code-bg;
+    border: 1px solid $doc-code-border;
+    border-radius: $border-radius;
+    padding: $spacing-md;
+    margin-bottom: $spacing-lg;
+    font-family: $font-family-monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+  }
+  
+  &__props {
+    width: 100%;
+    margin-bottom: $spacing-lg;
+    
+    th, td {
+      padding: $spacing-sm $spacing-md;
+      border-bottom: 1px solid $color-border;
+    }
+    
+    th {
+      text-align: left;
+      font-weight: 600;
+      background-color: $doc-code-bg;
+    }
+    
+    tr:last-child td {
+      border-bottom: 0;
+    }
+  }
+} 

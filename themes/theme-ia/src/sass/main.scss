@@ -1,0 +1,41 @@
+/**
+ * Arquivo principal de estilos
+ * 
+ * Este arquivo importa todos os outros arquivos SASS
+ */
+
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// Base
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utilities';
+
+// Components
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/navigation';
+@import 'components/pagination';
+@import 'components/widgets';
+@import 'components/components'; // Biblioteca de componentes
+
+// Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/grid';
+@import 'layout/documentation'; // Layout da documentação
+
+// Pages
+@import 'pages/home';
+@import 'pages/blog';
+@import 'pages/single';
+@import 'pages/archive';
+@import 'pages/404';
+@import 'pages/components'; // Página de componentes
+
+// Themes
+@import 'themes/default'; 

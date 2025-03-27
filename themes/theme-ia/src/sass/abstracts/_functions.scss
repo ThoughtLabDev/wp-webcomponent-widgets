@@ -1,0 +1,32 @@
+/**
+ * Funções SASS
+ */
+
+// Converter px para rem
+@function rem($pixels, $context: $font-size-base) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Converter px para em
+@function em($pixels, $context: $font-size-base) {
+  @return ($pixels / $context) * 1em;
+}
+
+// Ajustar cor
+@function adjust-color($color, $lightness: 0%) {
+  @return lighten($color, $lightness);
+}
+
+// Obter cor de texto com base no contraste
+@function get-text-color($background) {
+  @if (lightness($background) > 60) {
+    @return $color-dark;
+  } @else {
+    @return $color-light;
+  }
+}
+
+// Calcular largura de coluna
+@function column-width($columns, $total-columns: 12) {
+  @return percentage($columns / $total-columns);
+} 

@@ -1,0 +1,226 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Documentação/Como Usar" />
+
+# Como Usar os Componentes no WordPress
+
+## Função Principal de Renderização
+
+O plugin WP Components fornece uma função helper principal para renderizar qualquer componente em seu tema ou plugin:
+
+```php
+/**
+ * Renderiza um componente com os atributos especificados
+ *
+ * @param string $component_name Nome do componente.
+ * @param array  $atts           Atributos do componente.
+ * @param bool   $echo           Se deve ecoar o componente (true) ou retornar como string (false).
+ * @return string|void           HTML do componente se $echo for false.
+ */
+function wptl_render_component( $component_name, $atts = array(), $echo = false ) {
+    // Implementação interna
+}
+```
+
+## Exemplos de Uso
+
+### Botão
+
+```php
+// Renderizar um botão primário
+echo wp_component_button([
+    'text' => 'Botão Primário', 
+    'variant' => 'primary', 
+    'url' => 'https://www.google.com', 
+    'target' => '_blank'
+]);
+
+// Renderizar um botão secundário
+echo wp_component_button([
+    'text' => 'Botão Secundário', 
+    'variant' => 'secondary', 
+    'url' => 'https://www.google.com', 
+    'target' => '_blank'
+]);
+```
+
+### Card
+
+```php
+// Renderizar um card básico
+echo wptl_render_component('card', [
+    'title'         => 'Título do Card',
+    'content'       => '<p>Conteúdo do card que pode incluir HTML.</p>',
+    'imageUrl'      => 'https://exemplo.com/imagem.jpg',
+    'hasFooter'     => true,
+    'footerContent' => wptl_render_component('button', [
+        'text' => 'Saiba Mais',
+        'type' => 'primary'
+    ], false)
+]);
+```
+
+### Alert
+
+```php
+// Renderizar um alerta de sucesso
+echo wptl_render_component('alert', [
+    'type'        => 'success',
+    'title'       => 'Operação Concluída',
+    'message'     => 'Seus dados foram salvos com sucesso!',
+    'dismissible' => true
+]);
+
+// Renderizar um alerta de erro
+echo wptl_render_component('alert', [
+    'type'    => 'error',
+    'message' => 'Ocorreu um erro ao processar sua solicitação.'
+]);
+```
+
+### Tabs
+
+```php
+// Renderizar abas
+echo wptl_render_component('tabs', [
+    'tabs' => [
+        [
+            'title'   => 'Primeira Aba',
+            'content' => '<p>Conteúdo da primeira aba</p>'
+        ],
+        [
+            'title'   => 'Segunda Aba',
+            'content' => '<p>Conteúdo da segunda aba</p>'
+        ],
+        [
+            'title'   => 'Terceira Aba',
+            'content' => '<p>Conteúdo da terceira aba</p>'
+        ]
+    ],
+    'activeTab' => 0, // Inicia com a primeira aba ativa
+    'type'      => 'horizontal'
+]);
+```
+
+### Accordion
+
+```php
+// Renderizar accordion
+echo wptl_render_component('accordion', [
+    'items' => [
+        [
+            'title'   => 'Seção 1',
+            'content' => '<p>Conteúdo da primeira seção</p>'
+        ],
+        [
+            'title'   => 'Seção 2',
+            'content' => '<p>Conteúdo da segunda seção</p>'
+        ],
+        [
+            'title'   => 'Seção 3',
+            'content' => '<p>Conteúdo da terceira seção</p>'
+        ]
+    ],
+    'multiExpand' => true, // Permitir que múltiplas seções fiquem abertas
+    'defaultOpen' => 0 // Iniciar com a primeira seção aberta
+]);
+```
+
+## Customização via Filtros
+
+Todos os componentes podem ser customizados através de filtros WordPress:
+
+```php
+// Customizar atributos padrão do botão
+add_filter('wptl_component_button_defaults', function($defaults) {
+    // Modificar valores padrão
+    $defaults['size'] = 'large';
+    $defaults['type'] = 'secondary';
+    
+    return $defaults;
+});
+
+// Customizar a saída HTML de um componente
+add_filter('wptl_component_button_html', function($html, $atts) {
+    // Modificar o HTML antes da renderização
+    $html = str_replace('wptl-button', 'wptl-button meu-tema-botao', $html);
+    
+    return $html;
+}, 10, 2);
+```
+
+## Usando em Blocos Gutenberg
+
+Os componentes podem ser facilmente usados em blocos Gutenberg personalizados:
+
+```php
+// No callback de renderização do bloco
+function render_my_block($attributes) {
+    $output = '';
+    
+    // Renderizar um card com os atributos do bloco
+    $output .= wptl_render_component('card', [
+        'title'   => $attributes['title'],
+        'content' => $attributes['content'],
+        'variant' => $attributes['cardStyle']
+    ], false);
+    
+    return $output;
+}
+```
+
+## Usando com Elementor
+
+O plugin inclui integrações com o Elementor, permitindo que você use os componentes como widgets:
+
+```php
+// Os widgets do Elementor são registrados automaticamente
+// Procure por widgets com o prefixo "WP Components" no painel do Elementor
+```
+
+## Usando em Temas Customizados
+
+Você pode usar os componentes em qualquer parte do seu tema:
+
+```php
+// No arquivo template-parts/content.php
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header">
+        <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+    </header>
+    
+    <div class="entry-content">
+        <?php 
+        // Renderizar um alerta antes do conteúdo
+        if (is_singular() && get_post_meta(get_the_ID(), 'exibir_alerta', true)) {
+            echo wptl_render_component('alert', [
+                'type'    => 'info',
+                'message' => get_post_meta(get_the_ID(), 'texto_alerta', true)
+            ]);
+        }
+        
+        the_content();
+        ?>
+    </div>
+</article>
+```
+
+## Verificação de Disponibilidade
+
+Para garantir compatibilidade, verifique se a função existe antes de usá-la:
+
+```php
+if (function_exists('wptl_render_component')) {
+    echo wptl_render_component('button', [
+        'text' => 'Clique Aqui',
+        'type' => 'primary'
+    ]);
+} else {
+    // Fallback para quando o plugin não estiver ativo
+    echo '<a href="#" class="button button-primary">Clique Aqui</a>';
+}
+```
+
+## Exemplos Completos
+
+Consulte a documentação de cada componente específico para exemplos mais detalhados e todas as opções disponíveis. 

@@ -1,0 +1,941 @@
+/**
+ * Estilos para os componentes do WP Components
+ */
+
+/* Variáveis */
+:root {
+  --wp-component-primary: #4a6cf7;
+  --wp-component-secondary: #6c757d;
+  --wp-component-success: #2ecc71;
+  --wp-component-danger: #e74c3c;
+  --wp-component-warning: #f39c12;
+  --wp-component-info: #3498db;
+  --wp-component-light: #f8f9fa;
+  --wp-component-dark: #212529;
+  
+  --wp-component-text: #333;
+  --wp-component-text-light: #666;
+  --wp-component-text-lighter: #999;
+  --wp-component-background: #fff;
+  --wp-component-border: #eaeaea;
+  
+  --wp-component-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --wp-component-font-size-base: 16px;
+  --wp-component-line-height-base: 1.6;
+  
+  --wp-component-spacing-xs: 0.25rem;
+  --wp-component-spacing-sm: 0.5rem;
+  --wp-component-spacing-md: 1rem;
+  --wp-component-spacing-lg: 1.5rem;
+  --wp-component-spacing-xl: 2rem;
+  
+  --wp-component-border-radius: 0.375rem;
+  --wp-component-border-radius-lg: 0.5rem;
+  --wp-component-border-radius-sm: 0.25rem;
+  --wp-component-border-radius-pill: 50rem;
+  
+  --wp-component-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --wp-component-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --wp-component-shadow-lg: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  
+  --wp-component-transition-base: all 0.3s ease;
+}
+
+/* Cartão (Card) */
+.wp-component-card {
+  background-color: var(--wp-component-background);
+  border-radius: var(--wp-component-border-radius);
+  box-shadow: var(--wp-component-shadow-sm);
+  padding: var(--wp-component-spacing-lg);
+  margin-bottom: var(--wp-component-spacing-lg);
+  transition: var(--wp-component-transition-base);
+  border: 1px solid var(--wp-component-border);
+}
+
+.wp-component-card:hover {
+  box-shadow: var(--wp-component-shadow-md);
+  transform: translateY(-2px);
+}
+
+.wp-component-card__header {
+  margin-bottom: var(--wp-component-spacing-md);
+  border-bottom: 1px solid var(--wp-component-border);
+  padding-bottom: var(--wp-component-spacing-md);
+}
+
+.wp-component-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--wp-component-spacing-xs);
+  margin-top: 0;
+}
+
+.wp-component-card__subtitle {
+  color: var(--wp-component-text-light);
+  font-size: 0.875rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.wp-component-card__body {
+  margin-bottom: var(--wp-component-spacing-md);
+}
+
+.wp-component-card__footer {
+  border-top: 1px solid var(--wp-component-border);
+  padding-top: var(--wp-component-spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Variantes de cartão */
+.wp-component-card--primary {
+  border-top: 3px solid var(--wp-component-primary);
+}
+
+.wp-component-card--success {
+  border-top: 3px solid var(--wp-component-success);
+}
+
+.wp-component-card--warning {
+  border-top: 3px solid var(--wp-component-warning);
+}
+
+.wp-component-card--danger {
+  border-top: 3px solid var(--wp-component-danger);
+}
+
+/* Botão (Button) */
+.wp-component-button {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: var(--wp-component-border-radius);
+  transition: var(--wp-component-transition-base);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wp-component-button:hover, 
+.wp-component-button:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(74, 108, 247, 0.25);
+}
+
+/* Variantes de botão */
+.wp-component-button--primary {
+  color: #fff;
+  background-color: var(--wp-component-primary);
+  border-color: var(--wp-component-primary);
+}
+
+.wp-component-button--primary:hover {
+  background-color: #3a5ce4;
+  border-color: #3a5ce4;
+  color: #fff;
+}
+
+.wp-component-button--secondary {
+  color: #fff;
+  background-color: var(--wp-component-secondary);
+  border-color: var(--wp-component-secondary);
+}
+
+.wp-component-button--secondary:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+  color: #fff;
+}
+
+.wp-component-button--success {
+  color: #fff;
+  background-color: var(--wp-component-success);
+  border-color: var(--wp-component-success);
+}
+
+.wp-component-button--success:hover {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  color: #fff;
+}
+
+.wp-component-button--danger {
+  color: #fff;
+  background-color: var(--wp-component-danger);
+  border-color: var(--wp-component-danger);
+}
+
+.wp-component-button--danger:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
+
+.wp-component-button--outline-primary {
+  color: var(--wp-component-primary);
+  background-color: transparent;
+  border-color: var(--wp-component-primary);
+}
+
+.wp-component-button--outline-primary:hover {
+  color: #fff;
+  background-color: var(--wp-component-primary);
+  border-color: var(--wp-component-primary);
+}
+
+/* Tamanhos de botão */
+.wp-component-button--sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: var(--wp-component-border-radius-sm);
+}
+
+.wp-component-button--lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  border-radius: var(--wp-component-border-radius-lg);
+}
+
+/* Alerta (Alert) */
+.wp-component-alert {
+  position: relative;
+  padding: var(--wp-component-spacing-md) var(--wp-component-spacing-lg);
+  margin-bottom: var(--wp-component-spacing-md);
+  border: 1px solid transparent;
+  border-radius: var(--wp-component-border-radius);
+}
+
+.wp-component-alert__title {
+  font-weight: 600;
+  margin-bottom: var(--wp-component-spacing-xs);
+  margin-top: 0;
+}
+
+.wp-component-alert__close {
+  position: absolute;
+  top: var(--wp-component-spacing-md);
+  right: var(--wp-component-spacing-md);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.5;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.wp-component-alert__close:hover {
+  opacity: 0.75;
+}
+
+/* Variantes de alerta */
+.wp-component-alert--primary {
+  color: #2c4080;
+  background-color: #e0e6fd;
+  border-color: #d4dcfc;
+}
+
+.wp-component-alert--success {
+  color: #1d7a4d;
+  background-color: #d7f3e3;
+  border-color: #c7eed8;
+}
+
+.wp-component-alert--warning {
+  color: #8a6d3b;
+  background-color: #fef9e7;
+  border-color: #fcf3cf;
+}
+
+.wp-component-alert--danger {
+  color: #7d2c21;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Tabs */
+.wp-component-tabs {
+  margin-bottom: var(--wp-component-spacing-lg);
+}
+
+.wp-component-tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--wp-component-border);
+}
+
+.wp-component-tabs__item {
+  margin-bottom: -1px;
+}
+
+.wp-component-tabs__link {
+  display: block;
+  padding: var(--wp-component-spacing-md) var(--wp-component-spacing-lg);
+  border: 1px solid transparent;
+  border-top-left-radius: var(--wp-component-border-radius);
+  border-top-right-radius: var(--wp-component-border-radius);
+  text-decoration: none;
+  transition: var(--wp-component-transition-base);
+  color: var(--wp-component-text);
+}
+
+.wp-component-tabs__link:hover {
+  border-color: var(--wp-component-border) var(--wp-component-border) var(--wp-component-border);
+  text-decoration: none;
+}
+
+.wp-component-tabs__link.active {
+  color: var(--wp-component-primary);
+  background-color: var(--wp-component-background);
+  border-color: var(--wp-component-border) var(--wp-component-border) var(--wp-component-background);
+}
+
+.wp-component-tabs__content {
+  padding: var(--wp-component-spacing-lg);
+  border: 1px solid var(--wp-component-border);
+  border-top: 0;
+  border-bottom-right-radius: var(--wp-component-border-radius);
+  border-bottom-left-radius: var(--wp-component-border-radius);
+}
+
+.wp-component-tabs__pane {
+  display: none;
+}
+
+.wp-component-tabs__pane.active {
+  display: block;
+}
+
+/* Accordion */
+.wp-component-accordion {
+  border: 1px solid var(--wp-component-border);
+  border-radius: var(--wp-component-border-radius);
+  margin-bottom: var(--wp-component-spacing-lg);
+}
+
+.wp-component-accordion__item {
+  border-bottom: 1px solid var(--wp-component-border);
+}
+
+.wp-component-accordion__item:last-child {
+  border-bottom: 0;
+}
+
+.wp-component-accordion__header {
+  margin: 0;
+  padding: 0;
+}
+
+.wp-component-accordion__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--wp-component-spacing-md) var(--wp-component-spacing-lg);
+  font-size: 1rem;
+  color: var(--wp-component-text);
+  text-align: left;
+  background-color: var(--wp-component-background);
+  border: 0;
+  border-radius: 0;
+  overflow-anchor: none;
+  transition: var(--wp-component-transition-base);
+  cursor: pointer;
+}
+
+.wp-component-accordion__button:not(.collapsed) {
+  color: var(--wp-component-primary);
+  background-color: rgba(74, 108, 247, 0.05);
+}
+
+.wp-component-accordion__button:not(.collapsed)::after {
+  transform: rotate(180deg);
+}
+
+.wp-component-accordion__button::after {
+  content: '';
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform .2s ease-in-out;
+}
+
+.wp-component-accordion__collapse {
+  height: 0;
+  overflow: hidden;
+  transition: height .35s ease;
+}
+
+.wp-component-accordion__collapse.show {
+  height: auto;
+}
+
+.wp-component-accordion__body {
+  padding: var(--wp-component-spacing-lg);
+}
+
+/* Modal */
+.wp-component-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1050 !important;
+    display: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    outline: 0 !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.wp-component-modal.show {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.wp-component-modal__dialog {
+    position: relative !important;
+    width: auto !important;
+    margin: 1.75rem auto !important;
+    max-width: 500px !important;
+    pointer-events: none !important;
+}
+
+.wp-component-modal__dialog--sm {
+    max-width: 300px !important;
+}
+
+.wp-component-modal__dialog--lg {
+    max-width: 800px !important;
+}
+
+.wp-component-modal__dialog--xl {
+    max-width: 1140px !important;
+}
+
+.wp-component-modal__content {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    pointer-events: auto !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 0.375rem !important;
+    outline: 0 !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.wp-component-modal__header {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid #eaeaea !important;
+    border-top-left-radius: 0.375rem !important;
+    border-top-right-radius: 0.375rem !important;
+}
+
+.wp-component-modal__title {
+    margin-bottom: 0 !important;
+    line-height: 1.5 !important;
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+}
+
+.wp-component-modal__close {
+    padding: 1rem !important;
+    margin: -1rem -1rem -1rem auto !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: #000 !important;
+    opacity: .5 !important;
+    cursor: pointer !important;
+}
+
+.wp-component-modal__close:hover {
+    opacity: .75 !important;
+    color: #000 !important;
+    text-decoration: none !important;
+}
+
+.wp-component-modal__body {
+    position: relative !important;
+    flex: 1 1 auto !important;
+    padding: 1rem !important;
+}
+
+.wp-component-modal__footer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    padding: 0.75rem !important;
+    border-top: 1px solid #eaeaea !important;
+    border-bottom-right-radius: 0.375rem !important;
+    border-bottom-left-radius: 0.375rem !important;
+}
+
+.wp-component-modal__footer > * {
+    margin: 0.25rem !important;
+}
+
+/* Badge */
+.wp-component-badge-wrapper {
+    position: relative !important;
+    display: inline-flex !important;
+}
+
+.wp-component-badge {
+    position: absolute !important;
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: center !important;
+    align-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 0.75rem !important;
+    min-width: 20px !important;
+    line-height: 1 !important;
+    padding: 0 6px !important;
+    height: 20px !important;
+    border-radius: 10px !important;
+    z-index: 1 !important;
+    transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+    background-color: #1976d2 !important;
+    color: #fff !important;
+}
+
+.wp-component-badge--top-right {
+    top: 0 !important;
+    right: 0 !important;
+    transform: scale(1) translate(50%, -50%) !important;
+    transform-origin: 100% 0% !important;
+}
+
+.wp-component-badge--top-left {
+    top: 0 !important;
+    left: 0 !important;
+    transform: scale(1) translate(-50%, -50%) !important;
+    transform-origin: 0% 0% !important;
+}
+
+.wp-component-badge--bottom-right {
+    bottom: 0 !important;
+    right: 0 !important;
+    transform: scale(1) translate(50%, 50%) !important;
+    transform-origin: 100% 100% !important;
+}
+
+.wp-component-badge--bottom-left {
+    bottom: 0 !important;
+    left: 0 !important;
+    transform: scale(1) translate(-50%, 50%) !important;
+    transform-origin: 0% 100% !important;
+}
+
+.wp-component-badge--overlap {
+    transform: scale(1) translate(50%, -50%) !important;
+}
+
+.wp-component-badge--dot {
+    height: 8px !important;
+    min-width: 8px !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+}
+
+.wp-component-badge--primary {
+    background-color: #1976d2 !important;
+    color: #fff !important;
+}
+
+.wp-component-badge--secondary {
+    background-color: #9c27b0 !important;
+    color: #fff !important;
+}
+
+.wp-component-badge--success {
+    background-color: #2e7d32 !important;
+    color: #fff !important;
+}
+
+.wp-component-badge--warning {
+    background-color: #ed6c02 !important;
+    color: #fff !important;
+}
+
+.wp-component-badge--danger {
+    background-color: #d32f2f !important;
+    color: #fff !important;
+}
+
+.wp-component-badge--info {
+    background-color: #0288d1 !important;
+    color: #fff !important;
+}
+
+/* Chip */
+.wp-component-chip {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 32px !important;
+    border-radius: 16px !important;
+    background-color: #e0e0e0 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    white-space: nowrap !important;
+    cursor: default !important;
+    outline: 0 !important;
+    text-decoration: none !important;
+    border: none !important;
+    padding: 0 12px !important;
+    font-size: 0.8125rem !important;
+    box-sizing: border-box !important;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+.wp-component-chip--clickable {
+    cursor: pointer !important;
+}
+
+.wp-component-chip--clickable:hover {
+    background-color: #d5d5d5 !important;
+}
+
+.wp-component-chip--outlined {
+    background-color: transparent !important;
+    border: 1px solid rgba(0, 0, 0, 0.23) !important;
+}
+
+.wp-component-chip--outlined.wp-component-chip--clickable:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.wp-component-chip--sm {
+    height: 24px !important;
+    font-size: 0.75rem !important;
+    border-radius: 12px !important;
+    padding: 0 8px !important;
+}
+
+.wp-component-chip--lg {
+    height: 40px !important;
+    font-size: 0.9375rem !important;
+    border-radius: 20px !important;
+    padding: 0 16px !important;
+}
+
+.wp-component-chip__avatar {
+    display: flex !important;
+    margin-left: -8px !important;
+    margin-right: 8px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+
+.wp-component-chip--sm .wp-component-chip__avatar {
+    width: 18px !important;
+    height: 18px !important;
+    margin-left: -4px !important;
+    margin-right: 4px !important;
+}
+
+.wp-component-chip--lg .wp-component-chip__avatar {
+    width: 32px !important;
+    height: 32px !important;
+    margin-left: -12px !important;
+    margin-right: 12px !important;
+}
+
+.wp-component-chip__avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.wp-component-chip__icon {
+    display: flex !important;
+    margin-left: -6px !important;
+    margin-right: 6px !important;
+}
+
+.wp-component-chip--sm .wp-component-chip__icon {
+    margin-left: -4px !important;
+    margin-right: 4px !important;
+    font-size: 0.75rem !important;
+}
+
+.wp-component-chip--lg .wp-component-chip__icon {
+    margin-left: -8px !important;
+    margin-right: 8px !important;
+    font-size: 1.25rem !important;
+}
+
+.wp-component-chip__label {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+}
+
+.wp-component-chip__delete {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: -6px !important;
+    margin-left: 4px !important;
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 11px !important;
+    color: rgba(0, 0, 0, 0.26) !important;
+    background-color: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
+
+.wp-component-chip__delete:hover {
+    color: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.wp-component-chip--sm .wp-component-chip__delete {
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: -4px !important;
+    margin-left: 2px !important;
+}
+
+.wp-component-chip--lg .wp-component-chip__delete {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: -8px !important;
+    margin-left: 8px !important;
+}
+
+.wp-component-chip--primary {
+    background-color: #e3f2fd !important;
+    color: #1976d2 !important;
+}
+
+.wp-component-chip--primary.wp-component-chip--clickable:hover {
+    background-color: #d0e8fc !important;
+}
+
+.wp-component-chip--primary.wp-component-chip--outlined {
+    background-color: transparent !important;
+    border-color: #1976d2 !important;
+}
+
+.wp-component-chip--secondary {
+    background-color: #f3e5f5 !important;
+    color: #9c27b0 !important;
+}
+
+.wp-component-chip--secondary.wp-component-chip--clickable:hover {
+    background-color: #e8d5eb !important;
+}
+
+.wp-component-chip--secondary.wp-component-chip--outlined {
+    background-color: transparent !important;
+    border-color: #9c27b0 !important;
+}
+
+.wp-component-chip--success {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
+}
+
+.wp-component-chip--success.wp-component-chip--clickable:hover {
+    background-color: #d7ecd9 !important;
+}
+
+.wp-component-chip--success.wp-component-chip--outlined {
+    background-color: transparent !important;
+    border-color: #2e7d32 !important;
+}
+
+.wp-component-chip--warning {
+    background-color: #fff3e0 !important;
+    color: #ed6c02 !important;
+}
+
+.wp-component-chip--warning.wp-component-chip--clickable:hover {
+    background-color: #ffe9c7 !important;
+}
+
+.wp-component-chip--warning.wp-component-chip--outlined {
+    background-color: transparent !important;
+    border-color: #ed6c02 !important;
+}
+
+.wp-component-chip--danger {
+    background-color: #ffebee !important;
+    color: #d32f2f !important;
+}
+
+.wp-component-chip--danger.wp-component-chip--clickable:hover {
+    background-color: #ffd8dd !important;
+}
+
+.wp-component-chip--danger.wp-component-chip--outlined {
+    background-color: transparent !important;
+    border-color: #d32f2f !important;
+}
+
+.wp-component-chip--info {
+    background-color: #e1f5fe !important;
+    color: #0288d1 !important;
+}
+
+/* Avatar */
+.wp-component-avatar {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+    font-size: 1.25rem !important;
+    line-height: 1 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    user-select: none !important;
+    color: #fff !important;
+    background-color: #bdbdbd !important;
+}
+
+.wp-component-avatar--xs {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.75rem !important;
+}
+
+.wp-component-avatar--sm {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+}
+
+.wp-component-avatar--md {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.25rem !important;
+}
+
+.wp-component-avatar--lg {
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 1.75rem !important;
+}
+
+.wp-component-avatar--xl {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 2.5rem !important;
+}
+
+.wp-component-avatar--circular {
+    border-radius: 50% !important;
+}
+
+.wp-component-avatar--rounded {
+    border-radius: 4px !important;
+}
+
+.wp-component-avatar--square {
+    border-radius: 0 !important;
+}
+
+.wp-component-avatar__img {
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center !important;
+    object-fit: cover !important;
+    color: transparent !important;
+}
+
+.wp-component-avatar__text {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+}
+
+.wp-component-avatar__icon {
+    font-size: inherit !important;
+}
+
+.wp-component-avatar__fallback {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.wp-component-avatar--primary {
+    background-color: #1976d2 !important;
+    color: #fff !important;
+}
+
+.wp-component-avatar--secondary {
+    background-color: #9c27b0 !important;
+    color: #fff !important;
+}
+
+.wp-component-avatar--success {
+    background-color: #2e7d32 !important;
+    color: #fff !important;
+}
+
+.wp-component-avatar--warning {
+    background-color: #ed6c02 !important;
+    color: #fff !important;
+}
+
+.wp-component-avatar--danger {
+    background-color: #d32f2f !important;
+    color: #fff !important;
+}
+
+.wp-component-avatar--info {
+    background-color: #0288d1 !important;
+    color: #fff !important;
+} 

@@ -1,0 +1,44 @@
+/* Estilos básicos do WordPress */
+:root {
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --wp-admin-border-width-focus: 2px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #1e1e1e;
+}
+
+.wp-block {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+/* Classes básicas do WordPress */
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 2;
+  min-height: 30px;
+  margin: 0;
+  padding: 0 10px;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.button-primary {
+  background: var(--wp-admin-theme-color);
+  border-color: var(--wp-admin-theme-color);
+  color: #fff;
+  text-shadow: none;
+} 

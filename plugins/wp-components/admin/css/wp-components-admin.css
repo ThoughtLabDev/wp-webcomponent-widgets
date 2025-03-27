@@ -1,0 +1,150 @@
+/**
+ * Estilos para a área administrativa do plugin WP Components
+ */
+
+/* Cabeçalho da página */
+.wp-components-admin-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+.wp-components-admin-description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Cards */
+.wp-components-admin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.wp-components-admin-card {
+    background-color: #fff;
+    border: 1px solid #e2e4e7;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.wp-components-admin-card:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.wp-components-admin-card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f1;
+    background-color: #f8f9fa;
+}
+
+.wp-components-admin-card-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.wp-components-admin-card-body {
+    padding: 20px;
+    min-height: 80px;
+}
+
+.wp-components-admin-card-body p {
+    margin: 0;
+    color: #555;
+}
+
+.wp-components-admin-card-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #f0f0f1;
+    background-color: #f8f9fa;
+    text-align: right;
+}
+
+/* Seções */
+.wp-components-admin-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.wp-components-admin-section h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+/* Tabelas */
+.wp-components-admin-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wp-components-admin-section th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+.wp-components-admin-section td {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f1;
+    vertical-align: middle;
+}
+
+.wp-components-admin-section td code {
+    background-color: #f6f7f7;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Formulários */
+.wp-components-admin-form {
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.wp-components-admin-form .form-table th {
+    width: 200px;
+}
+
+.wp-components-admin-form .form-table td {
+    padding: 15px 10px;
+}
+
+.wp-components-admin-form input[type="text"],
+.wp-components-admin-form select,
+.wp-components-admin-form textarea {
+    width: 100%;
+    max-width: 400px;
+}
+
+.wp-components-admin-form .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 782px) {
+    .wp-components-admin-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .wp-components-admin-form .form-table th {
+        width: 100%;
+        display: block;
+        padding-bottom: 0;
+    }
+    
+    .wp-components-admin-form .form-table td {
+        width: 100%;
+        display: block;
+    }
+} 

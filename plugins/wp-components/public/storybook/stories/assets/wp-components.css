@@ -1,0 +1,695 @@
+/**
+ * Estilos dos componentes WP Components para o Storybook
+ * Estes estilos replicam os estilos do plugin para exibição adequada no Storybook
+ */
+
+/* Estilos Globais */
+:root {
+  --wptl-primary-color: #0073aa;
+  --wptl-primary-color-hover: #005d8c;
+  --wptl-secondary-color: #23282d;
+  --wptl-success-color: #46b450;
+  --wptl-warning-color: #ffb900;
+  --wptl-error-color: #dc3232;
+  --wptl-info-color: #00a0d2;
+  --wptl-light-gray: #f1f1f1;
+  --wptl-medium-gray: #e2e2e2;
+  --wptl-border-color: #ccd0d4;
+  --wptl-text-color: #23282d;
+  --wptl-text-light: #ffffff;
+}
+
+/* Reset básico */
+.wptl-component * {
+  box-sizing: border-box;
+}
+
+/* === Componente Botão === */
+.wptl-button {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+/* Variantes de tipo */
+.wptl-button--primary {
+  color: var(--wptl-text-light);
+  background-color: var(--wptl-primary-color);
+  border-color: var(--wptl-primary-color);
+}
+
+.wptl-button--primary:hover {
+  background-color: var(--wptl-primary-color-hover);
+  border-color: var(--wptl-primary-color-hover);
+}
+
+.wptl-button--secondary {
+  color: var(--wptl-primary-color);
+  background-color: transparent;
+  border-color: var(--wptl-primary-color);
+}
+
+.wptl-button--secondary:hover {
+  color: var(--wptl-text-light);
+  background-color: var(--wptl-primary-color);
+}
+
+.wptl-button--tertiary {
+  color: var(--wptl-secondary-color);
+  background-color: var(--wptl-light-gray);
+  border-color: var(--wptl-border-color);
+}
+
+.wptl-button--tertiary:hover {
+  background-color: var(--wptl-medium-gray);
+}
+
+.wptl-button--link {
+  color: var(--wptl-primary-color);
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wptl-button--link:hover {
+  color: var(--wptl-primary-color-hover);
+  text-decoration: none;
+}
+
+/* Variantes de tamanho */
+.wptl-button--small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.wptl-button--medium {
+  /* Já está definido no padrão */
+}
+
+.wptl-button--large {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+}
+
+/* Estado desabilitado */
+.wptl-button--disabled, 
+.wptl-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === Componente Card === */
+.wptl-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Variantes */
+.wptl-card--default {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.wptl-card--bordered {
+  border: 1px solid var(--wptl-border-color);
+}
+
+.wptl-card--shadowed {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.wptl-card--flat {
+  box-shadow: none;
+  border: none;
+  background-color: #f8f9fa;
+}
+
+/* Partes do card */
+.wptl-card__header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--wptl-border-color);
+}
+
+.wptl-card__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--wptl-secondary-color);
+}
+
+.wptl-card__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wptl-card__content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.wptl-card__footer {
+  padding: 1rem;
+  border-top: 1px solid var(--wptl-border-color);
+}
+
+/* === Componente Alert === */
+.wptl-alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+/* Variantes */
+.wptl-alert--info {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.wptl-alert--success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.wptl-alert--warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.wptl-alert--error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Partes do alerta */
+.wptl-alert__title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.wptl-alert__content {
+  margin-bottom: 0;
+}
+
+.wptl-alert__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.5;
+}
+
+.wptl-alert__close:hover {
+  opacity: 1;
+}
+
+/* === Componente Tabs === */
+.wptl-tabs {
+  margin-bottom: 1rem;
+}
+
+/* Navegação */
+.wptl-tabs__nav {
+  display: flex;
+  border-bottom: 1px solid var(--wptl-border-color);
+}
+
+.wptl-tabs__nav-item {
+  padding: 0.5rem 1rem;
+  margin-bottom: -1px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--wptl-primary-color);
+}
+
+.wptl-tabs__nav-item:hover {
+  border-color: var(--wptl-medium-gray) var(--wptl-medium-gray) var(--wptl-border-color);
+}
+
+.wptl-tabs__nav-item--active {
+  color: var(--wptl-secondary-color);
+  background-color: #fff;
+  border-color: var(--wptl-border-color) var(--wptl-border-color) #fff;
+}
+
+/* Conteúdo */
+.wptl-tabs__content {
+  padding: 1rem;
+  border: 1px solid var(--wptl-border-color);
+  border-top: 0;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.wptl-tabs__panel {
+  display: none;
+}
+
+.wptl-tabs__panel--active {
+  display: block;
+}
+
+/* Variante vertical */
+.wptl-tabs--vertical {
+  display: flex;
+}
+
+.wptl-tabs--vertical .wptl-tabs__nav {
+  flex-direction: column;
+  border-right: 1px solid var(--wptl-border-color);
+  border-bottom: 0;
+}
+
+.wptl-tabs--vertical .wptl-tabs__nav-item {
+  margin-right: -1px;
+  margin-bottom: 0;
+  border-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.wptl-tabs--vertical .wptl-tabs__nav-item--active {
+  border-color: var(--wptl-border-color) #fff var(--wptl-border-color) var(--wptl-border-color);
+}
+
+.wptl-tabs--vertical .wptl-tabs__content {
+  flex: 1;
+  border-top: 1px solid var(--wptl-border-color);
+  border-left: 0;
+  border-top-right-radius: 0.25rem;
+}
+
+/* === Componente Accordion === */
+.wptl-accordion {
+  margin-bottom: 1rem;
+}
+
+.wptl-accordion__item {
+  border: 1px solid var(--wptl-border-color);
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.wptl-accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: var(--wptl-light-gray);
+  cursor: pointer;
+}
+
+.wptl-accordion__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--wptl-secondary-color);
+}
+
+.wptl-accordion__toggle {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.wptl-accordion__toggle::before,
+.wptl-accordion__toggle::after {
+  content: '';
+  position: absolute;
+  background-color: var(--wptl-secondary-color);
+}
+
+.wptl-accordion__toggle::before {
+  width: 2px;
+  height: 12px;
+  top: 6px;
+  left: 11px;
+  transition: transform 0.3s ease;
+}
+
+.wptl-accordion__toggle::after {
+  width: 12px;
+  height: 2px;
+  top: 11px;
+  left: 6px;
+}
+
+.wptl-accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.wptl-accordion__item--open .wptl-accordion__content {
+  max-height: 1000px;
+}
+
+.wptl-accordion__item--open .wptl-accordion__toggle::before {
+  transform: rotate(90deg);
+}
+
+.wptl-accordion__body {
+  padding: 1rem;
+}
+
+/* === Componente Badge === */
+.wptl-badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+/* Variantes */
+.wptl-badge--primary {
+  color: #fff;
+  background-color: var(--wptl-primary-color);
+}
+
+.wptl-badge--secondary {
+  color: #fff;
+  background-color: var(--wptl-secondary-color);
+}
+
+.wptl-badge--success {
+  color: #fff;
+  background-color: var(--wptl-success-color);
+}
+
+.wptl-badge--warning {
+  color: #212529;
+  background-color: var(--wptl-warning-color);
+}
+
+.wptl-badge--danger {
+  color: #fff;
+  background-color: var(--wptl-error-color);
+}
+
+.wptl-badge--info {
+  color: #fff;
+  background-color: var(--wptl-info-color);
+}
+
+.wptl-badge--light {
+  color: #212529;
+  background-color: var(--wptl-light-gray);
+}
+
+.wptl-badge--dark {
+  color: #fff;
+  background-color: var(--wptl-secondary-color);
+}
+
+/* === Componente Avatar === */
+.wptl-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--wptl-light-gray);
+}
+
+.wptl-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wptl-avatar__initials {
+  font-weight: 600;
+  color: var(--wptl-secondary-color);
+}
+
+/* Tamanhos */
+.wptl-avatar--small {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+}
+
+.wptl-avatar--medium {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+.wptl-avatar--large {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+}
+
+/* Variantes */
+.wptl-avatar--primary {
+  background-color: var(--wptl-primary-color);
+}
+
+.wptl-avatar--primary .wptl-avatar__initials {
+  color: #fff;
+}
+
+.wptl-avatar--secondary {
+  background-color: var(--wptl-secondary-color);
+}
+
+.wptl-avatar--secondary .wptl-avatar__initials {
+  color: #fff;
+}
+
+/* === Componente Form === */
+.wptl-form {
+  margin-bottom: 1rem;
+}
+
+.wptl-form__group {
+  margin-bottom: 1rem;
+}
+
+.wptl-form__label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.wptl-form__input,
+.wptl-form__textarea,
+.wptl-form__select {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--wptl-secondary-color);
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid var(--wptl-border-color);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.wptl-form__input:focus,
+.wptl-form__textarea:focus,
+.wptl-form__select:focus {
+  border-color: var(--wptl-primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 115, 170, 0.25);
+}
+
+.wptl-form__checkbox,
+.wptl-form__radio {
+  margin-right: 0.5rem;
+}
+
+.wptl-form__check-label {
+  margin-bottom: 0;
+}
+
+.wptl-form__text {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #6c757d;
+}
+
+/* Estados */
+.wptl-form__input--invalid,
+.wptl-form__textarea--invalid,
+.wptl-form__select--invalid {
+  border-color: var(--wptl-error-color);
+}
+
+.wptl-form__input--valid,
+.wptl-form__textarea--valid,
+.wptl-form__select--valid {
+  border-color: var(--wptl-success-color);
+}
+
+.wptl-form__error {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: var(--wptl-error-color);
+}
+
+/* === Componente Modal === */
+.wptl-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s;
+}
+
+.wptl-modal--open {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.wptl-modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wptl-modal__dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+  max-width: 500px;
+}
+
+.wptl-modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.wptl-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--wptl-border-color);
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.wptl-modal__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.wptl-modal__close {
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.wptl-modal__close:hover {
+  opacity: 1;
+}
+
+.wptl-modal__body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.wptl-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid var(--wptl-border-color);
+  border-bottom-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+
+.wptl-modal__footer > :not(:first-child) {
+  margin-left: .25rem;
+}
+
+.wptl-modal__footer > :not(:last-child) {
+  margin-right: .25rem;
+} 

@@ -1,0 +1,27 @@
+{
+  "name": "wp-components",
+  "version": "1.0.0",
+  "description": "WordPress Components Plugin with Web Components integration",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd wycliff-figma-to-storybook && npm run build",
+    "build:web-components": "cd wycliff-figma-to-storybook && npm run build:web-components",
+    "dev": "cd wycliff-figma-to-storybook && npm run dev"
+  },
+  "keywords": [
+    "wordpress",
+    "components",
+    "web-components",
+    "elementor"
+  ],
+  "author": "Wycliff",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/wp-components.git"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+} 

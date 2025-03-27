@@ -1,0 +1,102 @@
+/**
+ * Estilos para a página de administração do Storybook
+ */
+
+.wp-components-storybook-container {
+  margin: 20px 0;
+}
+
+.storybook-frame-container {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+}
+
+.storybook-frame-container iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  min-height: 800px;
+}
+
+.wp-components-storybook-info {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.wp-components-storybook-info h2 {
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.wp-components-storybook-info h3 {
+  margin: 1.5em 0 0.5em;
+}
+
+.wp-components-storybook-info ul {
+  margin-left: 1.5em;
+}
+
+.wp-components-storybook-info pre {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 4px;
+  overflow: auto;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 782px) {
+  .storybook-frame-container iframe {
+    min-height: 600px;
+  }
+}
+
+/* Botão de acesso rápido ao Storybook */
+.wp-components-storybook-button {
+  display: inline-block;
+  background: #0073aa;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.wp-components-storybook-button:hover {
+  background: #005d8c;
+  color: #fff;
+}
+
+/* Avisos e notas */
+.wp-components-storybook-notice {
+  background: #f0f6fc;
+  border-left: 4px solid #0073aa;
+  padding: 12px;
+  margin: 15px 0;
+}
+
+.wp-components-storybook-notice.warning {
+  background: #fcf8e3;
+  border-left-color: #dba617;
+}
+
+.wp-components-storybook-notice h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.wp-components-storybook-notice p:last-child {
+  margin-bottom: 0;
+} 

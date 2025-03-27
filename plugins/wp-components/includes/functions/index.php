@@ -1,0 +1,3 @@
+<?php
+// Silêncio é dourado.
+?> 

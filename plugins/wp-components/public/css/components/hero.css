@@ -1,0 +1,477 @@
+/* Hero Component Styles - Mobile First Approach */
+.wycliffe-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  /* Mobile-first padding - will adjust for desktop */
+  padding: 64px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Common styles across variants */
+.wycliffe-hero__text-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Subtitle/subheading styling */
+.wycliffe-hero__subtitle {
+  font-family: 'Gotham', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  color: #F78D2B !important; /* Orange accent color - ensure it's always applied */
+}
+
+/* Main heading styling */
+.wycliffe-hero__heading {
+  font-family: 'Joane', serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+  color: #484C52; /* Default dark text color */
+}
+
+/* Body text styling */
+.wycliffe-hero p {
+  font-family: 'Gotham', sans-serif;
+  font-weight: 325;
+  font-size: 18px;
+  line-height: 1.778;
+  text-align: center;
+  margin: 0;
+  color: #484C52; /* Default dark text color */
+}
+
+/* Call-to-action container */
+.wycliffe-hero__cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Primary CTA button */
+.wycliffe-hero__cta--primary {
+  display: inline-block;
+  padding: 14px 22px;
+  background-color: #D24635; /* Wycliffe red */
+  color: #FFFFFF;
+  font-family: 'Gotham', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wycliffe-hero__cta--primary:hover {
+  background-color: #B93C2E; /* Darker red */
+}
+
+/* Secondary CTA link */
+.wycliffe-hero__cta--secondary {
+  display: flex;
+  align-items: center;
+  font-family: 'Gotham', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #484C52; /* Default dark text color */
+  cursor: pointer;
+}
+
+.wycliffe-hero__cta-caret {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L1 13' stroke='%23484C52' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Media container */
+.wycliffe-hero__media-container {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wycliffe-hero__image,
+.wycliffe-hero__video-thumbnail {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Video play button */
+.wycliffe-hero__video-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.wycliffe-hero__play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wycliffe-hero__play-icon {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 16px solid white;
+  border-bottom: 10px solid transparent;
+  margin-left: 5px; /* Offset for visual balance */
+}
+
+/* Donation Form */
+.wycliffe-hero__donation-form {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 24px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.08);
+}
+
+.wycliffe-hero__donation-form h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  text-align: center;
+  color: #484C52;
+  margin: 0 0 16px 0;
+}
+
+.wycliffe-hero__donate-button {
+  width: 100%;
+  padding: 10px 5px;
+  background-color: #D24635;
+  color: #FFFFFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.714;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Lead Gen Form */
+.wycliffe-hero__lead-gen-form {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 24px;
+}
+
+.wycliffe-hero__lead-gen-form h3 {
+  font-family: 'Gotham', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.428;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.wycliffe-hero__signup-button {
+  width: 100%;
+  padding: 14px 22px;
+  background-color: #D24635;
+  color: #FFFFFF;
+  font-family: 'Gotham', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.wycliffe-hero__privacy-note {
+  font-family: 'Gotham', sans-serif;
+  font-weight: 325;
+  font-size: 12px;
+  line-height: 2;
+  text-align: center;
+  color: #ffffff;
+  margin: 8px 0 0 0;
+}
+
+/* Dark background modifier */
+.wycliffe-hero--dark-background {
+  background-color: #004F59 !important; /* Dark teal background with increased specificity */
+}
+
+/* Light text modifier */
+.wycliffe-hero--light-text .wycliffe-hero__heading,
+/* .wycliffe-hero--light-text p, */
+.wycliffe-hero--light-text .wycliffe-hero__cta--secondary {
+  color: #FFFFFF !important;
+}
+
+.wycliffe-hero--light-text p {
+    color: #F78D2B !important;
+}
+
+.wycliffe-hero--light-text .wycliffe-hero__cta-caret {
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L1 13' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* Variant-specific styles */
+.wycliffe-hero--split {
+  /* Mobile Split layout already handled by default styles */
+}
+
+.wycliffe-hero--video-split {
+  /* Mobile Video Split layout already handled by default styles */
+}
+
+.wycliffe-hero--centered {
+  /* Mobile Centered layout already handled by default styles */
+}
+
+.wycliffe-hero--feature-split {
+  /* Mobile Feature Split layout already handled by default styles */
+}
+
+.wycliffe-hero--accented-split {
+  background-color: #F7DD63; /* Yellow background */
+}
+
+.wycliffe-hero--accented-split .wycliffe-hero__heading {
+  color: #484C52; /* Always dark text in accented split */
+}
+
+.wycliffe-hero--accented-split .wycliffe-hero__accent-media-container {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wycliffe-hero--accented-split .wycliffe-hero__accent-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.wycliffe-hero--full-background {
+  min-height: 400px;
+  padding: 64px 20px;
+}
+
+.wycliffe-hero--full-background .wycliffe-hero__content {
+  max-width: 280px;
+}
+
+.wycliffe-hero--full-background .wycliffe-hero__heading {
+  color: #FFFFFF; /* Light text for visibility on backgrounds */
+}
+
+.wycliffe-hero--full-background .wycliffe-hero__text-layout p {
+  color: #FFFFFF;
+}
+
+.wycliffe-hero--full-background .wycliffe-hero__cta--secondary {
+  color: #FFFFFF;
+}
+
+.wycliffe-hero--full-background .wycliffe-hero__cta-caret {
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L1 13' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.wycliffe-hero--mobile {
+  /* Keeps mobile styles even at desktop sizes */
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .wycliffe-hero {
+    padding: 80px 40px;
+  }
+  
+  .wycliffe-hero__text-layout {
+    max-width: 480px;
+  }
+  
+  .wycliffe-hero__heading {
+    font-size: 56px;
+  }
+  
+  .wycliffe-hero__cta-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  /* Desktop Split layout */
+  .wycliffe-hero--split:not(.wycliffe-hero--mobile),
+  .wycliffe-hero--video-split:not(.wycliffe-hero--mobile),
+  .wycliffe-hero--feature-split:not(.wycliffe-hero--mobile) {
+    flex-direction: row;
+    padding: 0;
+  }
+  
+  .wycliffe-hero--split:not(.wycliffe-hero--mobile) .wycliffe-hero__content,
+  .wycliffe-hero--video-split:not(.wycliffe-hero--mobile) .wycliffe-hero__content,
+  .wycliffe-hero--feature-split:not(.wycliffe-hero--mobile) .wycliffe-hero__content {
+    width: 50%;
+    padding: 80px 40px;
+  }
+  
+  .wycliffe-hero--split:not(.wycliffe-hero--mobile) .wycliffe-hero__media-container,
+  .wycliffe-hero--video-split:not(.wycliffe-hero--mobile) .wycliffe-hero__media-container,
+  .wycliffe-hero--feature-split:not(.wycliffe-hero--mobile) .wycliffe-hero__media-container {
+    width: 50%;
+    margin-top: 0;
+    height: 100%;
+    min-height: 500px;
+    padding: 60px;
+  }
+  
+  .wycliffe-hero--split:not(.wycliffe-hero--mobile) .wycliffe-hero__text-layout,
+  .wycliffe-hero--video-split:not(.wycliffe-hero--mobile) .wycliffe-hero__text-layout,
+  .wycliffe-hero--feature-split:not(.wycliffe-hero--mobile) .wycliffe-hero__text-layout {
+    align-items: flex-start;
+  }
+  
+  .wycliffe-hero--split:not(.wycliffe-hero--mobile) .wycliffe-hero__subtitle,
+  .wycliffe-hero--video-split:not(.wycliffe-hero--mobile) .wycliffe-hero__subtitle,
+  .wycliffe-hero--feature-split:not(.wycliffe-hero--mobile) .wycliffe-hero__subtitle {
+    text-align: left;
+  }
+  
+  .wycliffe-hero--split:not(.wycliffe-hero--mobile) .wycliffe-hero__heading,
+  .wycliffe-hero--video-split:not(.wycliffe-hero--mobile) .wycliffe-hero__heading,
+  .wycliffe-hero--feature-split:not(.wycliffe-hero--mobile) .wycliffe-hero__heading {
+    text-align: left;
+  }
+  
+  .wycliffe-hero--split:not(.wycliffe-hero--mobile) .wycliffe-hero__cta-container,
+  .wycliffe-hero--video-split:not(.wycliffe-hero--mobile) .wycliffe-hero__cta-container,
+  .wycliffe-hero--feature-split:not(.wycliffe-hero--mobile) .wycliffe-hero__cta-container {
+    justify-content: flex-start;
+  }
+  
+  /* Desktop AccentedSplit layout */
+  .wycliffe-hero--accented-split:not(.wycliffe-hero--mobile) {
+    padding: 80px 40px;
+  }
+  
+  .wycliffe-hero--accented-split:not(.wycliffe-hero--mobile) .wycliffe-hero__content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .wycliffe-hero--accented-split:not(.wycliffe-hero--mobile) .wycliffe-hero__accent-media-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  
+  .wycliffe-hero--accented-split:not(.wycliffe-hero--mobile) .wycliffe-hero__accent-image {
+    max-width: 400px;
+  }
+  
+  /* Desktop FullBackground layout */
+  .wycliffe-hero--full-background:not(.wycliffe-hero--mobile) {
+    min-height: 500px;
+  }
+  
+  .wycliffe-hero--full-background:not(.wycliffe-hero--mobile) .wycliffe-hero__text-layout {
+    max-width: 600px;
+  }
+  
+  .wycliffe-hero--full-background:not(.wycliffe-hero--mobile) .wycliffe-hero__heading {
+    font-size: 64px;
+  }
+  
+  /* Desktop Donation Form */
+  .wycliffe-hero__donation-form {
+    max-width: 400px;
+  }
+  
+  /* Desktop Lead Gen Form */
+  .wycliffe-hero__lead-gen-form {
+    max-width: 400px;
+  }
+}
+
+/* Fallback fonts */
+@font-face {
+  font-family: 'Joane';
+  src: local('Georgia');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: local('Arial');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: local('Arial');
+  font-weight: 325;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: local('Arial');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: local('Arial');
+  font-weight: 700;
+} 
