@@ -1,114 +1,151 @@
 # WP Components
 
-Uma biblioteca de componentes reutilizáveis para WordPress.
+A collection of reusable web components for WordPress, designed to streamline development and maintain consistency across projects.
 
-## Descrição
+## Description
 
-WP Components é um plugin que fornece uma coleção de componentes de interface facilmente reutilizáveis em temas e plugins WordPress. O objetivo é facilitar a criação de layouts e interfaces consistentes, sem a necessidade de reescrever código HTML, CSS e JavaScript para elementos comuns.
+WP Components is a WordPress plugin that provides a set of reusable web components and Elementor widgets, making it easier to create consistent and maintainable WordPress websites. The plugin follows modern web development practices and integrates seamlessly with WordPress and Elementor.
 
-## Recursos
+## Features
 
-- **Biblioteca de Componentes**: Botões, cards, alertas, abas, acordeões e mais
-- **Integração com Editores**: Suporte para Gutenberg e Elementor
-- **API Simples**: Função única para renderização de qualquer componente
-- **Personalizável**: Adaptável através de filtros WordPress
-- **Documentação Interativa**: Storybook integrado para documentação visual
+### Web Components
+- **Hero Component**: Multiple layout variants for hero sections
+- **Button Component**: Customizable buttons with various styles
+- **Card Component**: Flexible card layouts for content display
+- **Alert Component**: Different types of alert messages
+- **Badge Component**: Status and label indicators
+- **Avatar Component**: User profile image display
+- **Chip Component**: Compact information display
+- **Form Component**: Custom form elements
+- **Grid Component**: Responsive grid layouts
+- **Modal Component**: Popup dialog boxes
+- **Pagination Component**: Navigation for content lists
+- **Tabs Component**: Tabbed content organization
 
-## Instalação
+### Elementor Integration
+- Custom widgets for all components
+- Drag-and-drop interface
+- Live preview
+- Responsive controls
+- Style customization options
 
-1. Faça o upload do plugin para a pasta `/wp-content/plugins/`
-2. Ative o plugin através do menu 'Plugins' no WordPress
-3. Use os componentes em seus temas e plugins
+### Development Features
+- Storybook integration for component documentation
+- SCSS support for styling
+- Modern JavaScript with Web Components
+- TypeScript support
+- Development tools and utilities
 
-## Uso Básico
+## Installation
 
-Para usar um componente em qualquer parte do seu site:
+1. Download the plugin zip file
+2. Go to WordPress admin > Plugins > Add New
+3. Click "Upload Plugin" and select the downloaded file
+4. Click "Install Now" and then "Activate"
 
+## Requirements
+
+- WordPress 5.8 or higher
+- PHP 7.4 or higher
+- Elementor (optional, for widget support)
+- Modern web browser with Web Components support
+
+## Directory Structure
+
+```
+wp-components/
+├── admin/                 # Admin interface files
+├── assets/               # Static assets (JS, CSS, images)
+├── includes/             # Core plugin files
+│   ├── components/       # Individual component classes
+│   ├── functions/        # Helper functions
+│   ├── integrations/     # Third-party integrations
+│   └── wp-components-functions.php
+├── public/              # Public-facing files
+│   ├── css/            # Compiled CSS
+│   ├── js/             # Compiled JavaScript
+│   └── storybook/      # Storybook documentation
+└── wp-components.php    # Main plugin file
+```
+
+## Usage
+
+### Basic Usage
 ```php
-// Renderizar um botão
-echo wptl_render_component('button', [
-    'text' => 'Clique Aqui',
-    'type' => 'primary',
-    'url'  => 'https://exemplo.com'
+// Using a component in your theme
+echo wp_component_button([
+    'text' => 'Click Me',
+    'variant' => 'primary',
+    'url' => 'https://example.com'
 ]);
 
-// Renderizar um card
-echo wptl_render_component('card', [
-    'title'   => 'Título do Card',
-    'content' => 'Conteúdo do card',
-    'variant' => 'bordered'
+// Using a component in a template
+echo wp_component_card([
+    'title' => 'Card Title',
+    'content' => 'Card content goes here',
+    'image' => 'path/to/image.jpg'
 ]);
 ```
 
-## Documentação com Storybook
+### Elementor Usage
+1. Edit a page with Elementor
+2. Find the "WP Components" category in the widget panel
+3. Drag and drop any component widget
+4. Configure the component settings in the Elementor panel
 
-Este plugin inclui uma documentação interativa construída com o Storybook, permitindo visualizar e testar todos os componentes.
+## Development
 
-### Como Acessar a Documentação
-
-1. No painel de administração, acesse "WP Components" > "Documentação"
-2. A documentação interativa será exibida com todos os componentes disponíveis
-
-### Desenvolvimento com Storybook
-
-Para desenvolvedores que desejam trabalhar com o Storybook localmente:
-
-1. Navegue até o diretório do plugin: `cd wp-content/plugins/wp-components/public/storybook`
-2. Instale as dependências: `npm install`
-3. Inicie o servidor de desenvolvimento: `npm run storybook`
-4. Acesse http://localhost:6006 no seu navegador
-
-### Construindo a Documentação Estática
-
-Para gerar uma versão estática da documentação para o painel administrativo:
-
+### Setup Development Environment
 ```bash
-cd wp-content/plugins/wp-components/public/storybook
+# Install dependencies
 npm install
-npm run build-storybook
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run Storybook
+npm run storybook
 ```
 
-Ou acesse "WP Components" > "Configuração" no painel administrativo e clique em "Gerar Histórias dos Componentes".
+### Adding New Components
+1. Create a new component class in `includes/components/`
+2. Add component styles in `assets/scss/components/`
+3. Create component JavaScript in `assets/js/components/`
+4. Add Elementor widget in `includes/integrations/elementor/`
+5. Create Storybook stories in `public/storybook/stories/`
 
-## Componentes Disponíveis
+## Documentation
 
-- **Button**: Botões com várias aparências e tamanhos
-- **Card**: Contêineres para organizar informações
-- **Alert**: Mensagens informativas, de aviso, erro ou sucesso
-- **Tabs**: Organizadores de conteúdo em abas
-- **Accordion**: Seções expansíveis de conteúdo
-- **Modal**: Janelas modais ou diálogos
-- **Form Elements**: Campos de formulário estilizados
-- **Badge**: Indicadores numéricos ou de status
-- **Avatar**: Representações de usuários
+- [Component Documentation](public/storybook)
+- [API Reference](docs/api.md)
+- [Development Guide](docs/development.md)
+- [Contributing Guide](CONTRIBUTING.md)
 
-## Personalização
+## Contributing
 
-Todos os componentes podem ser personalizados através de filtros WordPress:
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-```php
-// Personalizar valores padrão do botão
-add_filter('wptl_component_button_defaults', function($defaults) {
-    $defaults['size'] = 'large';
-    return $defaults;
-});
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
-// Modificar o HTML de saída
-add_filter('wptl_component_button_html', function($html, $atts) {
-    // Personalizar o HTML
-    return $html;
-}, 10, 2);
-```
+## Support
 
-## Requisitos
+- [GitHub Issues](https://github.com/ThoughtLabDev/wp-components/issues)
+- [Documentation](https://github.com/ThoughtLabDev/wp-components/wiki)
+- [Community Forum](https://github.com/ThoughtLabDev/wp-components/discussions)
 
-- WordPress 5.0 ou superior
-- PHP 7.0 ou superior
+## License
 
-## Licença
+This plugin is licensed under the GPL v2 or later.
 
-GPL v2 ou posterior
+## Credits
 
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests. 
+- Built with [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+- Powered by [Elementor](https://elementor.com/)
+- Documentation with [Storybook](https://storybook.js.org/) 
